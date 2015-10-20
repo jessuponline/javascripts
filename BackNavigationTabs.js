@@ -2,7 +2,8 @@ $(document).ready(function() {
 // add a hash to the URL when the user clicks on a tab
 
 var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-if(is_chrome)
+var is_safari = /^((?!chrome).)*safari/i.test(navigator.userAgent);
+if(is_chrome || is_safari)
 {
     document.getElementById("startid").href = "##start";
 }
@@ -14,7 +15,7 @@ if(window.location.hash){
    a && a.tab('show'); 
 }
 else{
-   if(is_chrome){
+   if(is_chrome || is_safari){
    history.replaceState(undefined, undefined, "##start");}
    else{
 	   history.replaceState(undefined, undefined, "#start");
