@@ -7,8 +7,6 @@ if(is_chrome || is_safari)
 {
     document.getElementById("startid").href = "##start";
 }
-//adding a comment
-//adding another one
 
 if(window.location.hash){
    var a = $('[href=' + location.hash + ']'); 
